@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keystone Scheduling — Booking software that runs itself</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acuity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 
@@ -19,12 +19,11 @@
     </a>
     <nav class="main-nav">
       <div class="links">
-        <a href="#pricing">Pricing</a>
-        <a href="#help">Help</a>
-        <a href="about.html">About</a>
-        <a href="#login">Log in</a>
+        <a href="#">Pricing</a>
+        <a href="#">Help</a>
+        <a href="#">Log in</a>
       </div>
-      <a class="btn btn-dark" href="#try">Try scheduling</a>
+      <a class="btn btn-dark" href="#">Try scheduling</a>
     </nav>
   </div>
 </header>
@@ -34,15 +33,31 @@
     <h1>Booking software that keeps your calendar honest</h1>
     <p class="lede">Give clients a link, not a back-and-forth. Keystone handles availability, payments, and reminders so your day stays yours.</p>
     <div class="cta-row">
-      <a class="btn btn-light" href="#try">Try scheduling</a>
+      <a class="btn btn-light" href="#">Try scheduling</a>
       <span class="note">No credit card needed</span>
     </div>
   </div>
   <div class="strip">
-    <div class="cell c1"><span>Salon &amp; spa</span></div>
-    <div class="cell c2"><span>Wellness</span></div>
-    <div class="cell c3"><span>Coaching</span></div>
-    <div class="cell c4"><span>Automotive</span></div>
+    <div class="cell c1">
+      <img src="img/hair appointment.png" alt="Salon appointment">
+      <span>Salon &amp; spa</span>
+    </div>
+    <div class="cell c2">
+      <img src="img/reiki session.png" alt="Wellness session">
+      <span>Wellness</span>
+    </div>
+    <div class="cell c3">
+      <img src="img/cardio.png" alt="Fitness coaching">
+      <span>Coaching</span>
+    </div>
+    <div class="cell c4">
+      <img src="img/utility.png" alt="Automotive service">
+      <span>Automotive</span>
+    </div>
+    <div class="watch">
+      <img src="img/play.png" alt="Play">
+      <span>Watch the film</span>
+    </div>
   </div>
 </section>
 
@@ -55,7 +70,7 @@
           <h3>Set your hours once, on your own terms</h3>
           <p>Block off personal time, cap same-day bookings, and let clients only see the slots you've actually opened up — for live sessions or classes alike.</p>
         </div>
-        <div class="visual violet"></div>
+        <img class="visual-img cover" src="img/cardio.png" alt="People exercising outdoors">
       </div>
     </div>
 
@@ -65,15 +80,7 @@
           <h3>Booking that runs without you</h3>
           <p>Clients reschedule or cancel on their own, across every location you manage. Reminders go out automatically so no one just forgets.</p>
         </div>
-        <div class="visual confirm">
-          <div class="pill-row">
-            <span class="pill ok">Booking confirmed</span>
-          </div>
-          <div class="pill-row">
-            <span class="pill">Reschedule</span>
-            <span class="pill cancel">Cancel appointment</span>
-          </div>
-        </div>
+        <img class="visual-img" src="img/booking notif.png" alt="Booking confirmation and reschedule options">
       </div>
 
       <div class="card">
@@ -81,12 +88,7 @@
           <h3>Turn first visits into regulars</h3>
           <p>Custom intake forms collect what you need before the appointment starts, and loyalty tools keep people coming back on their own.</p>
         </div>
-        <div class="form-mock">
-          <label>Name</label>
-          <div class="field"></div>
-          <span>Any allergies we should know about?</span>
-          <div class="radio-row"><span class="radio"></span> Yes &nbsp;&nbsp; <span class="radio"></span> No</div>
-        </div>
+        <img class="visual-img" src="img/registration.png" alt="Client intake registration form">
       </div>
     </div>
 
@@ -96,11 +98,7 @@
           <h3>Protect your time, and get paid for it</h3>
           <p>Cards on file and deposits cut down on no-shows. Sell packages, memberships, and gift cards without any extra plumbing.</p>
         </div>
-        <div class="subs-mock">
-          <div class="subs-row"><span>Haircare subscription</span><span class="amt">$45/mo</span></div>
-          <div class="subs-row"><span>10-visit package</span><span class="amt">$320</span></div>
-          <div class="subs-row"><span>Gift card</span><span class="amt">$50</span></div>
-        </div>
+        <img class="visual-img" src="img/notifications.png" alt="Subscriptions, packages, and gift cards">
       </div>
     </div>
 
@@ -123,21 +121,21 @@
         <div class="mockup-body">
           <div class="mockup-row">
             <div class="mockup-row-inner">
-              <div class="thumb t1"></div>
+              <img class="thumb" src="img/reiki session.png" alt="">
               <div class="info"><h4>Group yoga</h4><p>60 min · from $25</p></div>
             </div>
             <button>Book</button>
           </div>
           <div class="mockup-row">
             <div class="mockup-row-inner">
-              <div class="thumb t2"></div>
-              <div class="info"><h4>Reformer pilates</h4><p>45 min · from $40</p></div>
+              <img class="thumb" src="img/hair appointment.png" alt="">
+              <div class="info"><h4>Reformer Pilates</h4><p>45 min · from $40</p></div>
             </div>
             <button>Book</button>
           </div>
           <div class="mockup-row">
             <div class="mockup-row-inner">
-              <div class="thumb t3"></div>
+              <img class="thumb" src="img/lens adjustment.png" alt="">
               <div class="info"><h4>Beginner flow</h4><p>50 min · from $22</p></div>
             </div>
             <button>Book</button>
@@ -167,10 +165,22 @@
     </div>
 
     <div class="gallery">
-      <div class="g-item"><div class="g-photo p1"></div><p>Tutoring &amp; education</p></div>
-      <div class="g-item"><div class="g-photo p2"></div><p>Legal &amp; financial services</p></div>
-      <div class="g-item"><div class="g-photo p3"></div><p>Pet care &amp; grooming</p></div>
-      <div class="g-item"><div class="g-photo p4"></div><p>Auto repair &amp; maintenance</p></div>
+      <div class="g-item">
+        <img class="g-photo" src="img/education.png" alt="Tutoring and education workspace">
+        <p>Tutoring &amp; education</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/financial.png" alt="Legal and financial services">
+        <p>Legal &amp; financial services</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/pet.png" alt="Pet care and grooming">
+        <p>Pet care &amp; grooming</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/automotiveand maintence.png" alt="Auto repair and maintenance">
+        <p>Auto repair &amp; maintenance</p>
+      </div>
     </div>
   </div>
 </section>
@@ -200,11 +210,11 @@
     <div class="integrations">
       <p>Works alongside the tools you already use</p>
       <div class="integration-badges">
-        <span>Stripe</span>
-        <span>Square</span>
-        <span>Zapier</span>
-        <span>PayPal</span>
-        <span>Analytics</span>
+        <img src="img/stripe.png" alt="Stripe">
+        <img src="img/Square.png" alt="Square">
+        <img src="img/zapier.png" alt="Zapier">
+        <img src="img/PayPal.png" alt="PayPal">
+        <img src="img/Google.png" alt="Google Analytics">
       </div>
     </div>
   </div>
@@ -217,12 +227,12 @@
         <h2>Knowing your name is only the beginning</h2>
         <p>Real people, not a script, are on the other end whenever something goes sideways.</p>
         <div class="link-list">
-          <a href="#help">Visit the help center</a>
-          <a href="#contact">Contact support</a>
-          <a href="#blog">Read the blog</a>
+          <a href="#">Visit the help center</a>
+          <a href="#">Contact support</a>
+          <a href="#">Read the blog</a>
         </div>
       </div>
-      <div class="art"></div>
+      <img class="art" src="img/support.png" alt="Support team in a modern office">
     </div>
   </div>
 </section>
