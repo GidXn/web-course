@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="083d8529-5c06-4357-bbd2-db06e9417b08" name="Changes" comment="claude code">
+    <list default="true" id="083d8529-5c06-4357-bbd2-db06e9417b08" name="Changes" comment="my changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +81,7 @@
       <workItem from="1789637351122" duration="116000" />
       <workItem from="1789657553899" duration="1007000" />
       <workItem from="1789660022630" duration="24000" />
-      <workItem from="1789665859842" duration="1826000" />
+      <workItem from="1789665859842" duration="1977000" />
     </task>
     <task id="LOCAL-00001" summary="added images">
       <option name="closed" value="true" />
@@ -109,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789635739980</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="my changes">
+      <option name="closed" value="true" />
+      <created>1789667810209</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1789667810209</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added images" />
     <MESSAGE value="claude code" />
-    <option name="LAST_COMMIT_MESSAGE" value="claude code" />
+    <MESSAGE value="my changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="my changes" />
   </component>
 </project>
