@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(95, 147, 192);
+}
+header{
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    border-radius: 16px;
+    padding: 18px 40px 18px 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.title{
+
+}
