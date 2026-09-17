@@ -417,7 +417,7 @@ p{ margin: 0; }
   flex-wrap: wrap;
 }
 .integration-badges img{
-  height: 132px;
+  height: 117px;
   width: auto;
   border-radius: 999px;
   box-shadow: 0 8px 20px -12px rgba(22,35,44,.3);
@@ -467,7 +467,7 @@ p{ margin: 0; }
   padding-top: 26px;
   font-size: 0.85rem;
 }
-.footer-bottom .logo .mark{ width: 22px; height: 22px; border-radius: 6px; }
+/*.footer-bottom .logo .mark{ width: 22px; height: 22px; border-radius: 6px; }*/
 .lang-select{
   border: 1px solid rgba(255,255,255,.25);
   border-radius: 999px;

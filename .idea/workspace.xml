@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="083d8529-5c06-4357-bbd2-db06e9417b08" name="Changes" comment="my changes">
+    <list default="true" id="083d8529-5c06-4357-bbd2-db06e9417b08" name="Changes" comment="little fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +82,7 @@
       <workItem from="1789637351122" duration="116000" />
       <workItem from="1789657553899" duration="1007000" />
       <workItem from="1789660022630" duration="24000" />
-      <workItem from="1789665859842" duration="1977000" />
+      <workItem from="1789665859842" duration="2783000" />
     </task>
     <task id="LOCAL-00001" summary="added images">
       <option name="closed" value="true" />
@@ -115,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789667810209</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1789667957797</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1789667957797</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +134,7 @@
     <MESSAGE value="added images" />
     <MESSAGE value="claude code" />
     <MESSAGE value="my changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="my changes" />
+    <MESSAGE value="little fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="little fix" />
   </component>
 </project>
