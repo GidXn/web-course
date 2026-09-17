@@ -1,27 +1,152 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Навчальний проєкт з курсу веб-програмування">
-    <title>Гидін Михайло — Веб-програмування</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Mykhailo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Гидін Михайло</h1>
-<p>Здобувач першого курсу спеціальності «Інженерія ПЗ».</p>
 
-<h2>Тема навчального проєкту</h2>
-<p>
-    Протягом семестру розробляється інформаційний сайт, присвячений
-    комп'ютерним іграм.
-</p>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <span class="mark"></span>
+      keystone
+    </a>
+    <nav class="main-nav">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="#work">Work</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-dark" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
 
-<h2>Перелік технологій, що вивчаються</h2>
-<ul>
-    <li>HTML — структура та змістова розмітка документа</li>
-    <li>CSS — оформлення та адаптивна верстка</li>
-    <li>JavaScript — базова інтерактивність</li>
-</ul>
+<section class="about-hero">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">About the author</p>
+      <h1>Mykhailo — builds small, precise tools for Windows</h1>
+      <p class="lede">Comfortable in Windows environments and scripting, with a habit of tinkering until a setup is exactly right rather than just good enough.</p>
+    </div>
+    <div class="avatar"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="bio-columns">
+      <div class="lead-text">
+        <h2>A little background</h2>
+        <p>Most of the work here is hands-on and practical: scripting fixes for real Windows quirks, and customizing a desktop down to the smallest detail rather than leaving it at defaults.</p>
+      </div>
+      <div class="detail">
+        <p>That shows up in projects like reworking a Rainmeter skin's time display to run on a 24-hour clock with proper localized day and month names, or writing a self-elevating batch script that handles UAC prompts cleanly instead of asking twice.</p>
+        <p>The common thread is control — over how a clock reads, how a script asks for permissions, how a desktop actually looks day to day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-mist" id="interests">
+  <div class="wrap">
+    <div class="split-head">
+      <h2>What holds the attention</h2>
+      <p>A few areas that keep coming back into projects and free time alike.</p>
+    </div>
+
+    <div class="interest-cards">
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Windows scripting</h3>
+        <p>Batch and PowerShell scripts that quietly handle the annoying parts — elevation, permissions, setup steps.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Desktop customization</h3>
+        <p>Rainmeter skins tuned past their defaults — localized text, reworked time formats, small visual fixes.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Gaming</h3>
+        <p>An ongoing interest, and often the reason a desktop setup needs to look and behave exactly right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="split-head">
+      <h2>Recent hands-on work</h2>
+      <p>Smaller, one-off technical tasks rather than a single ongoing project.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="row">
+        <span class="tag">Scripting</span>
+        <div>
+          <h4>Self-elevating batch script</h4>
+          <p>Built using PowerShell's <code>Start-Process -Verb RunAs</code>, and picked up a clearer sense of how UAC elevation actually works along the way.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="tag">Customization</span>
+        <div>
+          <h4>Rainmeter "Summit" skin rework</h4>
+          <p>Modified the Time.ini file to lock the display to 24-hour format, and added Russian-language localization for day and month names through a Substitute-based approach in a dedicated Language\Russian.inc file.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-mist" id="contact">
+  <div class="wrap">
+    <div class="cta-dark">
+      <div class="copy">
+        <h2>Say hello</h2>
+        <p>Open to talking through scripting problems, desktop setups, or anything in between.</p>
+        <div class="link-list">
+          <a href="#">Send a message</a>
+        </div>
+      </div>
+      <div class="art"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Elsewhere</h5>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="logo" style="font-size:0.95rem;"><span class="mark"></span> keystone</span>
+      <span></span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
