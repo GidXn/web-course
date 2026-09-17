@@ -1,44 +1,257 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Навчальний проєкт з курсу веб-програмування">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acuity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<header>
-    <img class="title" src="img/Logo.png" alt="Logo">
-    <div class="list">
-        <a class="basic-nav" href="#">Pricing</a>
-        <a class="basic-nav" href="#">Help</a>
-        <a class="basic-nav" href="#">Log in</a>
-        <a class="square-nav" href="#">Try scheduling</a>
-    </div>
-</header>
-<section class="start">
-    <div class="start-container">
-    <h2>Flexible scheduling software to help you succeed</h2>
-    <p>With seamless client scheduling, secure payments, and workflow automation, all you have to do is show up on time.</p>
-    <a class="try-scheduling" href="#">Try scheduling</a>
-    <p>No credit card needed</p>
-    </div>
 
-    <div class="photo-gallery">
-        <img src="img/slider1.png" alt="1">
-        <img src="img/slider2.png" alt="2">
-        <img src="img/slider3.png" alt="3">
-        <img src="img/slider4.png" alt="4">
-        <img src="img/slider5.png" alt="5">
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img class="mark" src="img/Logo.svg" alt="logo">
+    </a>
+    <nav class="main-nav">
+      <div class="links">
+        <a href="#">Pricing</a>
+        <a href="#">Help</a>
+        <a href="#">Log in</a>
+      </div>
+      <a class="btn btn-dark" href="#">Try scheduling</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Booking software that keeps your calendar honest</h1>
+    <p class="lede">Give clients a link, not a back-and-forth. Keystone handles availability, payments, and reminders so your day stays yours.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#">Try scheduling</a>
+      <span class="note">No credit card needed</span>
     </div>
-    <div class="watch">
-    <img src="img/play.png" alt="play">
-    <p>Watch the film</p>
+  </div>
+  <div class="strip">
+    <div class="cell c1">
+      <img src="img/hair appointment.png" alt="Salon appointment">
+      <span>Salon &amp; spa</span>
     </div>
+    <div class="cell c2">
+      <img src="img/reiki session.png" alt="Wellness session">
+      <span>Wellness</span>
+    </div>
+    <div class="cell c3">
+      <img src="img/cardio.png" alt="Fitness coaching">
+      <span>Coaching</span>
+    </div>
+    <div class="cell c4">
+      <img src="img/utility.png" alt="Automotive service">
+      <span>Automotive</span>
+    </div>
+  </div>
+  <div class="watch">
+    <div class="watch-text">
+      <img src="img/play.png" alt="Play">
+      <span>Watch the film</span>
+    </div>
+  </div>
 </section>
 
-<footer>Footer</footer>
-<p><a href="about.html">Відомості про автора</a></p>
+<section class="section">
+  <div class="wrap">
+
+    <div class="feature-grid">
+      <div class="card wide image-right">
+        <div class="card-copy">
+          <h3>Set your hours once, on your own terms</h3>
+          <p>Block off personal time, cap same-day bookings, and let clients only see the slots you've actually opened up — for live sessions or classes alike.</p>
+        </div>
+        <img class="visual-img cover" src="img/cardio.png" alt="People exercising outdoors">
+      </div>
+    </div>
+
+    <div class="feature-grid stacked">
+      <div class="card">
+        <div class="card-copy">
+          <h3>Booking that runs without you</h3>
+          <p>Clients reschedule or cancel on their own, across every location you manage. Reminders go out automatically so no one just forgets.</p>
+        </div>
+        <img class="visual-img" src="img/booking notif.png" alt="Booking confirmation and reschedule options">
+      </div>
+
+      <div class="card">
+        <div class="card-copy">
+          <h3>Turn first visits into regulars</h3>
+          <p>Custom intake forms collect what you need before the appointment starts, and loyalty tools keep people coming back on their own.</p>
+        </div>
+        <img class="visual-img" src="img/registration.png" alt="Client intake registration form">
+      </div>
+    </div>
+
+    <div class="feature-grid stacked">
+      <div class="card wide image-right">
+        <div class="card-copy">
+          <h3>Protect your time, and get paid for it</h3>
+          <p>Cards on file and deposits cut down on no-shows. Sell packages, memberships, and gift cards without any extra plumbing.</p>
+        </div>
+        <img class="visual-img" src="img/notifications.png" alt="Subscriptions, packages, and gift cards">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section on-mist">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A booking page that looks like it belongs to you</h2>
+      <p>Branded, self-serve, and always showing real-time availability — clients book without ever needing to call.</p>
+    </div>
+
+    <div class="mockup">
+      <img class="mockup-img" src="img/asana-manana.png" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split-head">
+      <h2>Scheduling that fits the way you actually work</h2>
+      <p>The same tools flex across very different businesses — here's who's using them today.</p>
+    </div>
+
+    <div class="gallery-head">
+      <span></span>
+      <div class="gallery-controls">
+        <span>01 / 04</span>
+        <div class="arrows">
+          <button aria-label="Previous">←</button>
+          <button aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="g-item">
+        <img class="g-photo" src="img/education.png" alt="Tutoring and education workspace">
+        <p>Tutoring &amp; education</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/financial.png" alt="Legal and financial services">
+        <p>Legal &amp; financial services</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/pet.png" alt="Pet care and grooming">
+        <p>Pet care &amp; grooming</p>
+      </div>
+      <div class="g-item">
+        <img class="g-photo" src="img/automotiveand maintence.png" alt="Auto repair and maintenance">
+        <p>Auto repair &amp; maintenance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-mist">
+  <div class="wrap">
+    <div class="split-head">
+      <h2>More than just a calendar</h2>
+      <p>One system to manage staff, take payments, cut no-shows, and keep client details private.</p>
+    </div>
+
+    <div class="numbered-grid">
+      <div class="item"><span class="num">01</span><h4>Manage everything</h4><p>Sync calendars and set staff permissions from your phone.</p></div>
+      <div class="item"><span class="num">02</span><h4>Accept payments</h4><p>Trusted processors handle invoices, tips, and deposits.</p></div>
+      <div class="item"><span class="num">03</span><h4>Grow revenue</h4><p>Upsell with packages, memberships, and gift certificates.</p></div>
+      <div class="item"><span class="num">04</span><h4>Stay compliant</h4><p>Client data stays private with built-in safeguards.</p></div>
+      <div class="item"><span class="num">05</span><h4>Cut no-shows</h4><p>Automated reminders and card-on-file deposits keep people honest.</p></div>
+      <div class="item"><span class="num">06</span><h4>Feel personal</h4><p>Custom intake forms and notes for every client.</p></div>
+      <div class="item"><span class="num">07</span><h4>Get found</h4><p>Share your page anywhere — social, email, your own site.</p></div>
+      <div class="item"><span class="num">08</span><h4>Make it yours</h4><p>Match your brand and set exactly when clients can book.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="integrations">
+      <p>Works alongside the tools you already use</p>
+      <div class="integration-badges">
+        <img src="img/stripe.png" alt="Stripe">
+        <img src="img/Square.png" alt="Square">
+        <img src="img/zapier.png" alt="Zapier">
+        <img src="img/PayPal.png" alt="PayPal">
+        <img src="img/Google.png" alt="Google Analytics">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-dark">
+      <div class="copy">
+        <h2>Knowing your name is only the beginning</h2>
+        <p>Real people, not a script, are on the other end whenever something goes sideways.</p>
+        <div class="link-list">
+          <a href="#">Visit the help center</a>
+          <a href="#">Contact support</a>
+          <a href="#">Read the blog</a>
+        </div>
+      </div>
+      <img class="art" src="img/support.png" alt="Support team in a modern office">
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#">Plans &amp; pricing</a></li>
+          <li><a href="#">Enterprise</a></li>
+          <li><a href="#">Help &amp; support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a class="logo" href="index.html">
+        <img class="mark" src="img/Logow.svg" alt="logo">
+      </a>
+      <span class="lang-select">English ▾</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
