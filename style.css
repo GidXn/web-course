@@ -1,26 +1,66 @@
 /* Базові стилі сайту */
 
+:root {
+  --brand-color: #1c4e80;
+  --brand-color-dark: #123a5e;
+  --bg-color: #f4f6f8;
+  --text-color: #222222;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #222222;
-  background-color: #f4f6f8;
-  padding: 2rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* Шапка сайту */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background-color: var(--brand-color);
+  color: #ffffff;
+}
+
+.site-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  text-decoration: underline;
+}
+
+/* Основний вміст */
+main {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 h1, h2 {
-  color: #1c4e80;
+  color: var(--brand-color);
 }
 
 h1 {
-  border-bottom: 3px solid #1c4e80;
+  border-bottom: 3px solid var(--brand-color);
   padding-bottom: 0.5rem;
 }
 
@@ -29,10 +69,18 @@ p, ul {
 }
 
 a {
-  color: #1c4e80;
-  text-decoration: none;
+  color: var(--brand-color);
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Підвал сайту */
+.site-footer {
+  background-color: var(--brand-color-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
