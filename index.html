@@ -1,56 +1,183 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Навчальний проєкт з курсу веб-програмування">
-  <title>Гидін Михайло — Веб-програмування</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Методичні рекомендації з форматів графіки у Web</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="site-header">
-    <p class="site-title">Гидін Михайло</p>
-    <nav class="site-nav">
-      <a href="index.html" class="active">Головна</a>
-      <a href="about.html">Про автора</a>
-    </nav>
+  <header>
+    <h1>Методичні рекомендації з форматів графіки у&nbsp;Web</h1>
+    <p><small>Лабораторна робота №&nbsp;3. Виконав: Гидін&nbsp;М.&nbsp;A., група КІІ-61(б).</small></p>
   </header>
 
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title"><strong>Зміст</strong></p>
+    <ol>
+      <li><a href="#intro">Вступ</a>
+        <ol>
+          <li><a href="#intro-role">Роль графіки</a></li>
+          <li><a href="#intro-terms">Основні терміни</a></li>
+        </ol>
+      </li>
+      <li><a href="#raster">Растрові формати</a>
+        <ol>
+          <li><a href="#raster-list">Поширені формати</a></li>
+          <li><a href="#raster-rating">Порівняння ефективності</a></li>
+        </ol>
+      </li>
+      <li><a href="#vector">Векторна графіка</a>
+        <ol>
+          <li><a href="#vector-svg">Формат SVG</a></li>
+          <li><a href="#vector-use">Сфери застосування</a></li>
+        </ol>
+      </li>
+      <li><a href="#choice">Вибір і оптимізація</a>
+        <ol>
+          <li><a href="#choice-criteria">Критерії вибору</a></li>
+          <li><a href="#choice-optimize">Оптимізація та доступність</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
   <main>
-    <h1>Гидін Михайло</h1>
-    <p>Здобувач першого курсу спеціальності «Інженерія програмного забезпечення».</p>
+    <section id="intro">
+      <h2>Вступ</h2>
+      <p>Графіка становить більшу частину трафіку сучасних вебсторінок. Від правильного вибору формату зображення залежать швидкість завантаження, якість відображення та зручність користувачів із різними пристроями й мережами. Ці рекомендації допоможуть обрати формат під конкретне завдання.</p>
 
-    <h2>Тема навчального проєкту</h2>
-    <p>
-      Протягом семестру розробляється сайт-візитка сервісу онлайн-запису
-      на послуги: опис можливостей запису, перелік послуг та контактна
-      інформація.
-    </p>
+      <h3 id="intro-role">Роль графіки</h3>
+      <p>Зображення виконують декілька функцій: передають інформацію (схеми, графіки), створюють настрій (фотографії, ілюстрації) та забезпечують навігацію (логотипи, піктограми). Кожна функція висуває власні вимоги до розміру файлу, різкості та масштабованості.</p>
+      <p>Неоптимізовані зображення&nbsp;&mdash; найчастіша причина повільних сторінок. Показник LCP має бути &le;&nbsp;2,5&nbsp;с, а велике зображення у першому екрані часто і є елементом, який його визначає.</p>
 
-    <h2>Перелік технологій, що вивчаються</h2>
-    <ul>
-      <li>HTML — структура та змістова розмітка документа</li>
-      <li>CSS — оформлення та адаптивна верстка</li>
-      <li>JavaScript — базова інтерактивність</li>
-    </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae consequatur cupiditate dicta distinctio
-      earum, expedita fugiat iste laudantium maiores necessitatibus sed sequi tempore. Harum natus perspiciatis porro
-      saepe veritatis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae consequatur cupiditate dicta distinctio
-      earum, expedita fugiat iste laudantium maiores necessitatibus sed sequi tempore. Harum natus perspiciatis porro
-      saepe veritatis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae consequatur cupiditate dicta distinctio
-      earum, expedita fugiat iste laudantium maiores necessitatibus sed sequi tempore. Harum natus perspiciatis porro
-      saepe veritatis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae consequatur cupiditate dicta distinctio
-      earum, expedita fugiat iste laudantium maiores necessitatibus sed sequi tempore. Harum natus perspiciatis porro
-      saepe veritatis.</p>
+      <h3 id="intro-terms">Основні терміни</h3>
+      <p>Перш ніж порівнювати формати, узгодимо поняття. Їхні короткі означення наведено нижче.</p>
+      <dl>
+        <dt><dfn>Піксель</dfn></dt>
+        <dd>найменший елемент растрового зображення, що має певний колір.</dd>
+        <dt><dfn>Растрова графіка</dfn></dt>
+        <dd>зображення у вигляді сітки пікселів; при збільшенні втрачає якість.</dd>
+        <dt><dfn>Векторна графіка</dfn></dt>
+        <dd>опис зображення геометричними примітивами, що масштабуються без втрат.</dd>
+        <dt><dfn>Альфа-канал</dfn></dt>
+        <dd>додатковий канал, що задає прозорість кожного пікселя.</dd>
+        <dt><dfn>Стиснення з втратами</dfn></dt>
+        <dd>спосіб зменшення розміру файлу шляхом безповоротного відкидання частини даних.</dd>
+        <dt><dfn>Деінтерлейсинг</dfn></dt>
+        <dd>зворотне перетворення черезрядкового зображення до послідовного.</dd>
+      </dl>
+      <p>У довгих термінах, як-от інтер&shy;націо&shy;наліза&shy;ція чи ві&shy;зуалі&shy;зація, браузер може переносити слово за допомогою м'якого переносу.</p>
+      <p>Окремо варто згадати про кольорові простори й метадані. Більшість зображень для вебу зберігають у просторі sRGB, щоб колір виглядав однаково на різних екранах. Метадані камери (EXIF) перед публікацією зазвичай видаляють: вони збільшують файл і можуть розкривати координати зйомки.</p>
+      <p><a href="#toc-title">↑ До змісту</a></p>
+    </section>
+
+    <section id="raster">
+      <h2>Растрові формати</h2>
+      <p>Растрові формати підходять для фотографій та складних зображень із плавними переходами кольору. Вони відрізняються алгоритмом стиснення, підтримкою прозорості та анімації.</p>
+
+      <h3 id="raster-list">Поширені формати</h3>
+      <p>Нижче наведено основні формати із ключовими властивостями.</p>
+      <ul>
+        <li><abbr title="Joint Photographic Experts Group">JPEG</abbr>
+          <ul>
+            <li>стиснення з втратами;</li>
+            <li>не підтримує прозорість;</li>
+            <li>ідеальний для фотографій.</li>
+          </ul>
+        </li>
+        <li><abbr title="Portable Network Graphics">PNG</abbr>
+          <ul>
+            <li>стиснення без втрат;</li>
+            <li>підтримує альфа-канал;</li>
+            <li>добре підходить для скріншотів та інтерфейсів.</li>
+          </ul>
+        </li>
+        <li><abbr title="Graphics Interchange Format">GIF</abbr>
+          <ul>
+            <li>палітра до 256 кольорів;</li>
+            <li>проста анімація.</li>
+          </ul>
+        </li>
+        <li>WebP та AVIF
+          <ul>
+            <li>сучасні формати з високою ефективністю;</li>
+            <li>підтримують прозорість і анімацію;
+              <ul>
+                <li>AVIF зазвичай стискає краще, але кодується довше.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>Формат WebP представила компанія Google у <time datetime="2010-05">травні 2010 року</time>, а специфікацію AVIF завершено у 2019&nbsp;році.</p>
+
+      <h3 id="raster-rating">Порівняння ефективності</h3>
+      <p>Орієнтовний порядок форматів за ефективністю стиснення фотографій подано у вигляді зворотного відліку: місце&nbsp;I&nbsp;&mdash; найкращий результат.</p>
+      <ol reversed start="5" type="I">
+        <li>GIF</li>
+        <li>PNG</li>
+        <li>JPEG</li>
+        <li>WebP</li>
+        <li>AVIF</li>
+      </ol>
+      <p>Реальний результат залежить від вмісту зображення та налаштувань кодера, тому <mark>завжди порівнюйте розміри файлів на власних даних</mark>.</p>
+      <p>На практиці варто готувати кілька версій одного зображення: малу для мобільних пристроїв, середню для планшетів і велику для широких екранів. Так браузер завантажує лише те, що справді потрібно, а користувач економить трафік і час очікування.</p>
+      <p><a href="#toc-title">↑ До змісту</a></p>
+    </section>
+
+    <section id="vector">
+      <h2>Векторна графіка</h2>
+      <p>Векторні зображення описуються формулами, а не пікселями. Завдяки цьому вони однаково чіткі на будь-якому розмірі й екрані, а їхній розмір майже не залежить від роздільної здатності.</p>
+
+      <h3 id="vector-svg">Формат SVG</h3>
+      <p><abbr title="Scalable Vector Graphics">SVG</abbr>&nbsp;&mdash; відкритий формат на основі XML, який можна вбудовувати просто в HTML. Його елементи стилізуються через CSS і керуються скриптами. Мінімальний приклад наведено в лістингу&nbsp;1.</p>
+      <figure>
+        <figcaption>Лістинг 1. Простий SVG-круг</figcaption>
+        <pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="teal"&gt;&lt;/circle&gt;
+&lt;/svg&gt;</code></pre>
+      </figure>
+      <p>Атрибут <code>viewBox</code> задає внутрішню систему координат, що дає змогу масштабувати малюнок. Якщо зберегти файл через <kbd>Ctrl</kbd>+<kbd>S</kbd>, розширення має бути <samp>.svg</samp>.</p>
+
+      <h3 id="vector-use">Сфери застосування</h3>
+      <p>Векторна графіка найкраще підходить для логотипів, піктограм, схем та діаграм. Для фотографій вона не призначена, адже описати їх геометричними фігурами практично неможливо.</p>
+      <p>Розмір растрового зображення у пікселях дорівнює <var>w</var>&nbsp;&times;&nbsp;<var>h</var>, а кількість байтів без стиснення&nbsp;&mdash; <var>w</var>&nbsp;&times;&nbsp;<var>h</var>&nbsp;&times;&nbsp;<var>k</var>, де <var>k</var>&nbsp;&mdash; глибина кольору в байтах. Один кілобайт дорівнює 2<sup>10</sup> байт, а кількість каналів у RGB позначають як N<sub>ch</sub>&nbsp;=&nbsp;3.</p>
+      <p>Ще одна перевага SVG полягає в тому, що файл можна додатково стиснути алгоритмами gzip чи Brotli, завдяки чому типовий значок займає лише кілька сотень байтів. Перед публікацією з файлу варто прибирати службові коментарі та метадані редактора.</p>
+      <p><a href="#toc-title">↑ До змісту</a></p>
+    </section>
+
+    <section id="choice">
+      <h2>Вибір і оптимізація</h2>
+      <p>Обираючи формат, враховують тип зображення, необхідність прозорості, підтримку браузерами та допустимий розмір файлу. Універсального формату не існує.</p>
+
+      <h3 id="choice-criteria">Критерії вибору</h3>
+      <p>Для фотографій доцільно застосовувати AVIF, WebP або JPEG, для логотипів і піктограм&nbsp;&mdash; SVG, для скріншотів&nbsp;&mdash; PNG чи WebP. Діапазон типових розмірів адаптивних зображень становить 400&ndash;1600&nbsp;пікселів за шириною. <small>Значення наведено орієнтовно.</small></p>
+      <p>Анімацію краще передавати відео чи анімованим WebP, а не GIF. Стара рекомендація <s>завжди використовувати GIF для анімації</s> втратила актуальність. Тепер діє така: <del datetime="2026-09-01">GIF</del> <ins datetime="2026-09-01">відео або WebP</ins>.</p>
+
+      <h3 id="choice-optimize">Оптимізація та доступність</h3>
+      <p>Щоб браузер сам обирав найкращий формат, застосовують елемент <code>picture</code> (лістинг&nbsp;2). Атрибути <code>width</code> і <code>height</code> запобігають зсуву макета під час завантаження.</p>
+      <figure>
+        <figcaption>Лістинг 2. Вибір формату через picture</figcaption>
+        <pre><code>&lt;picture&gt;
+  &lt;source srcset="photo.avif?w=800&amp;q=70" type="image/avif"&gt;
+  &lt;img src="photo.jpg" alt="Гірський пейзаж" width="800" height="600"&gt;
+&lt;/picture&gt;</code></pre>
+      </figure>
+      <p>Кожне змістовне зображення потребує текстової альтернативи в атрибуті <code>alt</code>. Принципи доступності формулюють так:</p>
+      <figure>
+        <blockquote cite="https://www.w3.org/TR/WCAG22/">
+          <p>Контент має бути сприйнятним, керованим, зрозумілим і надійним.</p>
+        </blockquote>
+        <figcaption>&mdash; <cite>Web Content Accessibility Guidelines 2.2</cite>, W3C, 2023</figcaption>
+      </figure>
+      <p>Автор наголошує, що <q cite="https://example.org/">семантика передує оформленню</q>, тому й для графіки спершу продумують зміст, а потім вигляд. Невдалий запис може викликати повідомлення <samp>Image failed to load</samp>; у документації такі випадки називають &laquo;зламаними зображеннями&raquo;.</p>
+      <p><a href="#toc-title">↑ До змісту</a></p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Гидін Михайло. Навчальний проєкт з веб-програмування.</p>
+  <footer>
+    <p><small>&copy; 2026, Гидін&nbsp;М.&nbsp;І. Дисципліна &laquo;Веб-програмування&raquo;.</small></p>
   </footer>
-
 </body>
 </html>
