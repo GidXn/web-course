@@ -37,6 +37,9 @@
 /* Inter 3.19 — та сама версія, якою рендерить Figma (Inter 4 з Google Fonts має інші гліфи) */
 @font-face { font-family: "Inter"; src: url("fonts/inter3-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Inter"; src: url("fonts/inter3-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+/* змінний Inter 3.19 — лише для білого тексту на темних кнопках: Chrome малює світлий текст
+   на темному тлі «жирніше», ніж Figma, тому там накреслення 320 (ширина як у 400) */
+@font-face { font-family: "Inter Var"; src: url("fonts/inter3-var.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 
 /* ============ BASE ============ */
 *, *::before, *::after { box-sizing: border-box; }
@@ -93,16 +96,14 @@ svg { flex: none; }
   left: 50%;
   width: var(--w-frame);
   transform: translateX(-50%);
-  border-left: 1px solid var(--mint-rule);
-  border-right: 1px solid var(--mint-rule);
+  box-shadow: inset 1px 0 var(--guide, var(--mint-rule)), inset -1px 0 var(--guide, var(--mint-rule));
   pointer-events: none;
 }
 .guides::before {
   content: "";
   position: absolute;
-  inset: 0 63px;
-  border-left: 1px solid var(--mint-rule);
-  border-right: 1px solid var(--mint-rule);
+  inset: 0 64px;
+  box-shadow: inset 1px 0 var(--guide, var(--mint-rule)), inset -1px 0 var(--guide, var(--mint-rule));
 }
 
 /* ============ BUTTONS ============ */
@@ -240,14 +241,15 @@ svg { flex: none; }
 
 /* tabs */
 .tabs {
-  display: inline-flex;
+  display: flex;
+  width: max-content;
   align-items: center;
   gap: 4px;
-  margin-top: 68px;            /* 513.59px */
-  padding: 4px 12px;
-  border: 1px solid rgba(40, 97, 103, .05);
+  margin: 68px auto 0;         /* 513.59px */
+  padding: 5px 13px;            /* 1px «рамки» тінню + 4/12 */
   border-radius: var(--pill);
   background: rgba(40, 97, 103, .07);
+  box-shadow: inset 0 0 0 1px rgba(40, 97, 103, .05);
   max-width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
@@ -261,12 +263,11 @@ svg { flex: none; }
   padding: 0 16px;
   font-size: 16px;
   line-height: 24px;
-  color: #0f4f57;
+  color: rgba(15, 79, 87, .7);   /* Figma: текст неактивного табу 70 %, іконка 100 % */
   white-space: nowrap;
-  opacity: .7;
 }
 .tab img { position: relative; width: 20px; height: 20px; }
-.tab.is-active { opacity: 1; }
+.tab.is-active { color: #0f4f57; }
 .tab.is-active::before {      /* біла «пігулка» 124×36 */
   content: "";
   position: absolute;
@@ -274,7 +275,7 @@ svg { flex: none; }
   bottom: 0;
   left: -8px;
   width: 124px;
-  border: 1px solid #cce3e4;
+  box-shadow: inset 0 0 0 1px #cce3e4;
   border-radius: 18px 16px 16px 18px;   /* Figma 32/16: ліві кути обрізаються до 18 (½ висоти), праві 16 */
   background: #fff;
 }
@@ -285,8 +286,8 @@ svg { flex: none; }
 .preview-band {
   position: relative;
   margin-top: 24px;            /* 583.59px */
-  border-top: 1px solid var(--mint-rule);
 }
+.preview-band::before,
 .preview-band::after {
   content: "";
   position: absolute;
@@ -295,11 +296,13 @@ svg { flex: none; }
   bottom: 0;
   height: 1px;
   background: var(--mint-rule);
+  pointer-events: none;
 }
+.preview-band::before { top: 0; bottom: auto; z-index: 1; }
 .preview {
   width: var(--w-frame);
   max-width: 100%;
-  margin: -1px auto 0;
+  margin: 0 auto;
   padding: 8px;
   background: rgba(40, 97, 103, .07);
 }
@@ -330,6 +333,7 @@ svg { flex: none; }
   display: inline-flex;
   align-items: center;
   vertical-align: top;
+  height: 24px;
   margin-left: 1.48px;
   color: rgba(15, 79, 87, .9);
   font-weight: 500;
@@ -352,9 +356,11 @@ svg { flex: none; }
 .logos-grid li:hover img { opacity: .7; }
 
 /* ============ SECTION HEADINGS ============ */
-.eyebrow {
-  display: inline-flex;
+.eyebrow {                   /* блочний flex: висота не залежить від метрик шрифту/DPR */
+  display: flex;
+  justify-content: center;
   align-items: center;
+  height: 20px;
   gap: 6px;
   font-size: 14px;
   line-height: 20px;
@@ -373,7 +379,7 @@ svg { flex: none; }
   margin-top: 14px;
   font-size: 16px;
   line-height: 24px;
-  color: var(--muted);
+  color: #4b5563;
 }
 
 /* ============ THE MODERN STANDARD (bento) ============ */
@@ -381,7 +387,8 @@ svg { flex: none; }
   padding: 127.8px var(--gutter) 0;
   text-align: center;
 }
-.standard .section-title { margin-top: 20px; }
+.standard .section-title { margin-top: 23.19px; line-height: 56px; }   /* рамка Figma 1860.91, 2×56 по центру → −0.81 */
+.standard .section-sub { margin-top: 13.18px; }
 .bento {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -398,7 +405,7 @@ svg { flex: none; }
   justify-content: flex-end;
   padding: 0 24px 28.25px;
   border-radius: 12px;
-  background: rgba(243, 244, 246, .7);
+  background: #f7f8f9;
   overflow: hidden;
   transition: box-shadow .25s ease, transform .25s ease;
 }
@@ -406,7 +413,8 @@ svg { flex: none; }
   content: "";
   position: absolute;
   inset: 50% 0 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #f7f7f8 40%);
+  /* Figma інтерполює колір без премультиплікації: білий → #f7f7f8 разом з альфою */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(253, 253, 253.25, .25) 10%, rgba(251, 251, 251.5, .5) 20%, rgba(249, 249, 249.75, .75) 30%, #f7f7f8 40%);
   pointer-events: none;
 }
 .bento-card--wide { grid-column: span 3; padding-bottom: 28px; }
@@ -449,7 +457,7 @@ svg { flex: none; }
   position: relative;
   margin: 0 auto;
   border-radius: var(--radius-xl);
-  background: rgba(243, 244, 246, .7);
+  background: #f7f8f9;          /* = rgba(243,244,246,.7) на білому, як рендерить Figma */
   overflow: hidden;
   text-align: center;
 }
@@ -462,8 +470,7 @@ svg { flex: none; }
   height: 1px;
   background: rgba(17, 24, 39, .05);
 }
-.guides--panel, .guides--final { border-color: rgba(17, 24, 39, .05); }
-.guides--panel::before, .guides--final::before { border-color: rgba(17, 24, 39, .05); }
+.guides--panel, .guides--final { --guide: rgba(17, 24, 39, .05); }
 .guides--panel { bottom: auto; height: 968.3px; }
 .panel-inner { position: relative; padding: 0 var(--gutter); }
 
@@ -474,7 +481,7 @@ svg { flex: none; }
   margin-top: 128px;
   padding: 112px 0 0;
 }
-.features .section-title { margin-top: 19.4px; }
+.features .section-title { margin-top: 23.4px; }
 .features .section-sub { margin-top: 14.59px; color: #4b5563; }
 
 .ai {
@@ -529,9 +536,9 @@ svg { flex: none; }
   width: var(--w-frame);
   max-width: 100%;
   margin: 1px auto 0;
-  border-left: 1px solid #ebebef;
-  border-right: 1px solid #ebebef;
+  padding: 0 1px;
   background: rgba(17, 24, 39, .05);
+  box-shadow: inset 1px 0 #ebebef, inset -1px 0 #ebebef;
   text-align: left;
 }
 .feature-grid::before,
@@ -570,8 +577,7 @@ svg { flex: none; }
   max-width: 100%;
   height: 96px;
   margin: 1px auto 0;
-  border-left: 1px solid rgba(17, 24, 39, .05);
-  border-right: 1px solid rgba(17, 24, 39, .05);
+  box-shadow: inset 1px 0 rgba(17, 24, 39, .05), inset -1px 0 rgba(17, 24, 39, .05);
 }
 
 /* ============ TESTIMONIALS (multi-column) ============ */
@@ -579,7 +585,7 @@ svg { flex: none; }
   padding: 128px var(--gutter) 0;
   text-align: center;
 }
-.love .section-title { margin-top: 19.4px; }
+.love .section-title { margin-top: 23.4px; }
 .love .section-sub { margin-top: 14.59px; }
 
 .wall {
@@ -597,14 +603,13 @@ svg { flex: none; }
 .quote {
   break-inside: avoid;
   margin-bottom: 12px;
-  padding: 24px 28px 24.25px;
-  border: 1px solid #f3f4f6;
+  padding: 25px 29px 25.25px;   /* 1px «рамки» тінню + 24/28 */
   border-radius: var(--radius-lg);
   background: #fff;
-  box-shadow: 0 1px 3px rgba(16, 24, 40, .03);
+  box-shadow: inset 0 0 0 1px #eff1f3;   /* Figma: рамка #eff1f3, без тіні */
 }
 .quote figcaption { display: flex; align-items: center; gap: 12px; }
-.quote b { display: block; font-size: 14px; line-height: 20px; font-weight: 500; color: #1f2937; }
+.quote b { display: block; font-size: 14px; line-height: 20px; font-weight: 400; color: #1f2937; }
 .quote small { display: block; font-size: 14px; line-height: 21px; color: var(--muted); }
 .quote figcaption { align-items: flex-start; }
 .quote figcaption > span { padding-top: 1px; }
@@ -660,12 +665,13 @@ svg { flex: none; }
   right: 0;
   bottom: 0;
   height: 128px;
-  border-bottom: 1px solid rgba(17, 24, 39, .05);
+  box-shadow: inset 0 -1px rgba(17, 24, 39, .05);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff);
   pointer-events: none;
 }
-.final .section-title { margin-top: 0; }
-.guides--final { width: 896px; border-color: rgba(17, 24, 39, .05); }
+.final .section-title { margin-top: -0.81px; line-height: 56px; }
+.final .section-sub { margin-top: 13.18px; }
+.guides--final { width: 896px; }
 .guides--final::before { inset: 0 -64px; }
 .cta-row--final { gap: 16px 32px; margin-top: 36px; }
 
@@ -676,7 +682,17 @@ svg { flex: none; }
   max-width: 100%;
   margin: 52px auto 0;
   padding: 8px;
-  background: #ebeced;
+  background: rgba(17, 24, 39, .05);   /* напівпрозора рамка: знизу крізь неї видно затухання панелі */
+}
+.showcase::before {           /* лінія на всю ширину панелі на рівні верху скріншота */
+  content: "";
+  position: absolute;
+  left: -64px;
+  right: -64px;
+  top: 0;
+  height: 1px;
+  background: rgba(17, 24, 39, .05);
+  pointer-events: none;
 }
 .showcase-shot {
   position: relative;
@@ -690,13 +706,13 @@ svg { flex: none; }
   content: "";
   position: absolute;
   inset: 316.58px 0 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 55%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .88) 48.5%, #fff 80%);   /* крива виміряна з макета */
 }
 .powered {
   position: absolute;
   left: 8px;
   right: 8px;
-  bottom: 32px;
+  bottom: 31.72px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -718,13 +734,13 @@ svg { flex: none; }
   transition: background-color .2s ease, border-color .2s ease;
 }
 .pw img { width: 20px; height: 20px; border-radius: 50%; }
-.pw.is-active, .pw:hover { background: #fff; box-shadow: inset 0 0 0 1px #f0f0f2; }
+.pw.is-active, .pw:hover { background: #fff; box-shadow: 0 0 0 1px #eef0f4, 0 1px 2px rgba(16, 24, 40, .05); }   /* зовнішній штрих Figma */
 
 /* ============ FOOTER (Figma: 272 → 1168) ============ */
 .footer {
   max-width: 832px;            /* 304 → 1136 */
   margin: 0 auto;
-  padding: 144px var(--gutter) 2.5px;
+  padding: 144px var(--gutter) 0;
   box-sizing: content-box;
 }
 .footer-top {
@@ -733,8 +749,8 @@ svg { flex: none; }
 }
 .footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
 .footer .logo img { width: 103px; height: 24px; }
-.socials { display: flex; align-items: center; height: 18px; margin-top: 90px; }
-.socials li { display: flex; align-items: center; }
+.socials { display: flex; align-items: flex-end; height: 18px; margin-top: 90px; }
+.socials li { display: flex; align-items: flex-end; }
 .socials li + li::before {
   content: "";
   width: 1px;
@@ -744,7 +760,6 @@ svg { flex: none; }
 }
 .socials a { display: inline-flex; transition: opacity .2s ease; }
 .socials a:hover { opacity: .7; }
-.socials li:nth-child(2) a { margin: 0 -1px; }
 .footer-col h2 { padding-top: .5px; font-size: 14px; line-height: 20px; font-weight: 400; color: #1f2937; }
 .footer-col ul { display: grid; gap: 14px; margin-top: 20.5px; }
 .footer-col a { display: block; font-size: 14px; line-height: 21px; color: #6b7280; transition: color .2s ease; }
@@ -753,19 +768,28 @@ svg { flex: none; }
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
+  align-items: start;
+  position: relative;
   margin-top: 64px;            /* лінія на 196px */
-  padding-top: 61px;
-  border-top: 1px solid #f3f4f6;
+  padding-top: 65px;           /* Figma рахує 64px від внутрішнього краю 1px-лінії */
+}
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: #f3f4f6;
 }
 .status {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 22px;
-  padding: 0 11px 0 5px;
-  border: 1px solid #f3f4f6;
+  padding: 0 12px 0 6px;
   border-radius: var(--pill);
+  box-shadow: inset 0 0 0 1px #f3f4f6;
   font-size: 12px;
   line-height: 16px;
   color: #1f2937;
@@ -784,6 +808,7 @@ svg { flex: none; }
   border-radius: 50%;
   background: #22c55e;
 }
+.footer-cell { display: flex; align-items: center; }
 .copy { text-align: center; font-size: 14px; line-height: 21px; color: #6b7280; }
 .theme { display: flex; justify-self: end; gap: 4px; }
 .theme button {
@@ -797,6 +822,41 @@ svg { flex: none; }
 }
 .theme button:hover { background: #f3f4f6; }
 .theme img { width: 16px; height: 16px; }
+
+/* ============ GLYPH OFFSETS ============
+   Figma ставить гліфи в рядку трохи інакше, ніж Chrome (виміряно по рендеру макета
+   на DPR 1.5 / 2). Зсув лише малює текст, геометрія блоків не змінюється. */
+.nav-links a, .nav-signin, .hero-sub, .btn .t, .btn-link .t, .tab .t, .logos-title,
+.eyebrow, .section-title, .section-sub, .bento-card h3, .bento-card p, .ai-copy h3, .ai-copy p,
+.feature-grid h3, .feature-grid p, .quote small, .show-more, .footer-col h2, .footer-col a,
+.copy, .status .t { position: relative; }
+.nav-links a, .nav-signin { top: .27px; }
+.hero-title { top: -.7px; }
+.hero-sub { top: .77px; }
+.btn--teal .t, .btn-link .t { top: .78px; }
+.btn--ink .t { top: .64px; }
+.btn--teal .t, .btn--ink .t { font-family: "Inter Var", "Inter", sans-serif; font-weight: 320; letter-spacing: .07px; }
+.btn--ghost .t { top: .46px; }
+.tab .t { top: .64px; }
+.logos-title { top: .55px; }
+.standard .eyebrow { top: .2px; }
+.love .eyebrow { top: .3px; }
+.standard .section-title { top: -.4px; }
+.love .section-title { top: -.18px; }
+.final .section-title { top: -.48px; }
+.section-sub { top: .48px; }
+.bento-card:not(.bento-card--wide) h3 { top: .3px; }
+.bento-card:not(.bento-card--wide) p { top: .2px; }
+.ai-copy h3 { top: .35px; }
+.ai-copy p { top: .77px; }
+.feature-grid h3 { top: .7px; }
+.feature-grid p { top: .62px; }
+.quote small { top: .59px; }
+.show-more { top: .7px; }
+.footer-col h2 { top: .81px; }
+.footer-col a { top: .7px; }
+.copy { top: .7px; }
+.status .t { top: 0; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 1200px) {
