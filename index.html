@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documentation platform</title>
+  <title>Mintlify — The documentation you want, effortlessly</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,10 +13,10 @@
   <nav class="nav container">
     <a href="#" class="logo">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span>Brand</span>
+      <span>Mintlify</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Documentation</a></li>
       <li><a href="#">Customers</a></li>
       <li><a href="#">Pricing</a></li>
       <li><a href="#">Blog</a></li>
@@ -24,64 +24,69 @@
       <li><a href="#">Enterprise</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="#" class="link-muted">Sign in</a>
-      <a href="#" class="btn btn-small btn-green">Get started</a>
+      <a href="#" class="link-muted">Sign In</a>
     </div>
   </nav>
 
   <div class="container hero-content">
     <h1 class="hero-title">The documentation<br>you want, effortlessly</h1>
-    <p class="hero-sub">Meet the modern standard for docs-as-code. Beautiful out of the box, easy to maintain, and optimized for user engagement.</p>
+    <p class="hero-sub">Meet the modern standard for public-facing documentation. Beautiful out of the box, easy to maintain, and optimized for user engagement.</p>
     <div class="hero-cta">
       <a href="#" class="btn btn-dark">Get Started <span aria-hidden="true">›</span></a>
       <a href="#" class="link-dark">Documentation <span aria-hidden="true">›</span></a>
     </div>
 
     <div class="tabs" role="tablist">
-      <button class="tab is-active" role="tab">Guides</button>
-      <button class="tab" role="tab">API Reference</button>
-      <button class="tab" role="tab">MDX Docs</button>
-      <button class="tab" role="tab">Q&amp;A</button>
+      <button class="tab is-active" role="tab">📖 Guides</button>
+      <button class="tab" role="tab">⌘ API Reference</button>
+      <button class="tab" role="tab">▣ SDK Docs</button>
+      <button class="tab" role="tab">◫ Chat</button>
     </div>
 
     <!-- Product preview window -->
     <div class="window">
       <div class="window-bar">
-        <div class="window-search">Search</div>
+        <div class="brand-mini"><span class="logo-mark" aria-hidden="true"></span>PearsDB</div>
+        <div class="window-search">Search… <span class="kbd">⌘K</span></div>
         <div class="window-actions">
-          <span>Log in</span>
-          <span class="btn btn-small btn-green">Get started</span>
+          <span>Login</span>
+          <span class="btn btn-small btn-green">Get started ›</span>
         </div>
+      </div>
+      <div class="window-tabs">
+        <span class="is-active">Documentation</span><span>API Reference</span><span>Libraries</span><span>Examples</span>
       </div>
       <div class="window-body">
         <aside class="window-side">
-          <div class="side-group">Get started</div>
-          <div class="side-item">Quickstart</div>
-          <div class="side-item">Installation</div>
-          <div class="side-item">Settings</div>
-          <div class="side-group">Core concepts</div>
+          <div class="side-link">Join our Slack</div>
+          <div class="side-link">Changelog</div>
+          <div class="side-link">GitHub</div>
+          <div class="side-group">Overview</div>
           <div class="side-item is-active">Introduction</div>
-          <div class="side-item">Connectors</div>
-          <div class="side-item">Agents</div>
+          <div class="side-item">Quickstart</div>
+          <div class="side-item">Concepts ›</div>
+          <div class="side-item">Learn more ›</div>
           <div class="side-group">Use cases</div>
-          <div class="side-item">Chatbots</div>
-          <div class="side-item">Product search</div>
-          <div class="side-item">Support tickets</div>
+          <div class="side-item">Chatbots ›</div>
+          <div class="side-item">Content generation ›</div>
+          <div class="side-item">Recommenders ›</div>
+          <div class="side-item">Question answering ›</div>
+          <div class="side-item">Forecasting ›</div>
         </aside>
         <article class="window-main">
-          <p class="crumb">Docs / Introduction</p>
+          <p class="crumb">Overview</p>
           <h3>Introduction</h3>
-          <p class="window-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <!-- TODO: сюди вставити зображення "Sample AI Workflow" (схема з вузлами Data / AI / Agents) -->
+          <p class="window-text">PearsDB is an AI automation platform for building AI/ML-powered features and applications.</p>
+          <p class="window-text">Connect any data source with any model or framework and automate how real-time data flows between them. You can build and automate any use case.</p>
+          <!-- 📌 Зображення: схема «Sample AI Workflow» (вставити файл сюди) -->
           <div class="img-note">📌 Зображення: схема «Sample AI Workflow» (додай файл сюди)</div>
           <h4>Sample AI Workflow</h4>
-          <p class="window-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="window-text">Automate any workflow end-to-end with the Jobs command: connect a data source, run a model and publish the output to a destination.</p>
         </article>
         <aside class="window-toc">
-          <div class="toc-title">On this page</div>
-          <div class="toc-item">Overview</div>
-          <div class="toc-item">Sample AI Workflow</div>
-          <div class="toc-item">Next steps</div>
+          <div class="toc-item is-active">Sample AI Workflow</div>
+          <div class="toc-item">Benefits of PearsDB</div>
+          <div class="toc-item">Contributing to PearsDB</div>
         </aside>
       </div>
     </div>
@@ -90,37 +95,37 @@
 
 <!-- ============ LOGOS ============ -->
 <section class="logos">
-  <p class="logos-title">Powering developer experiences first for growing startups to enterprises. <a href="#">Learn more ›</a></p>
+  <p class="logos-title">Powering developer experiences from fast growing startups to enterprises. <a href="#">Learn more ›</a></p>
   <div class="logos-row container">
-    <span>Teleport</span><span>homelab</span><span>stedi</span><span>Flatfile</span><span>ElevenLabs</span>
+    <span>✪ Teleport</span><span>◉ homebot</span><span>stedi</span><span>▙ Flatfile</span><span>IIElevenLabs</span>
   </div>
   <div class="logos-row container">
-    <span>mindsdb</span><span>Resend</span><span>goody</span><span>Whop</span><span>smartcar</span>
+    <span>mindsdb</span><span>Resend</span><span>goody</span><span>❦ Whop</span><span>smartcar</span>
   </div>
 </section>
 
 <!-- ============ MODERN STANDARD ============ -->
 <section class="section container">
-  <span class="pill">The modern standard</span>
+  <span class="pill">■ The modern standard</span>
   <h2 class="section-title">Beautiful documentation<br>that converts users</h2>
   <p class="section-sub">A platform you can rely on to reach your audience</p>
 
   <div class="cards cards-2">
     <div class="card">
       <div class="card-img">
-        <!-- TODO: скріншот інтерфейсу «Organize» -->
-        <div class="img-note">📌 Зображення: скріншот (Organize)</div>
+        <!-- 📌 Зображення: скріншот «Gorgeous out of the box» -->
+        <div class="img-note">📌 Зображення: скріншот (Gorgeous out of the box)</div>
       </div>
-      <h4>Organize all the things</h4>
-      <p>Optimized when you ship, the platform keeps everything in one place.</p>
+      <h4>Gorgeous out of the box</h4>
+      <p>Optimized when you ship, but infinitely flexible when you need it to be.</p>
     </div>
     <div class="card">
       <div class="card-img">
-        <!-- TODO: скріншот інтерфейсу «Customize» -->
-        <div class="img-note">📌 Зображення: скріншот (Customize)</div>
+        <!-- 📌 Зображення: скріншот «Developer forward» -->
+        <div class="img-note">📌 Зображення: скріншот (Developer forward)</div>
       </div>
-      <h4>Customize to match</h4>
-      <p>Content is powered by templates and themes that match your workflow.</p>
+      <h4>Developer forward</h4>
+      <p>Content is powered by markdown and lives alongside your codebase.</p>
     </div>
   </div>
 
@@ -130,21 +135,21 @@
         <div class="img-note">📌 Зображення: іконка / ілюстрація</div>
       </div>
       <h4>Built for performance</h4>
-      <p>Naturally integrates and optimized for a fast user experience.</p>
+      <p>Meticulously designed and optimized for a great user experience.</p>
     </div>
     <div class="card">
       <div class="card-img">
         <div class="img-note">📌 Зображення: іконка / ілюстрація</div>
       </div>
       <h4>Conversion as a priority</h4>
-      <p>Content to drive more engagement and conversions.</p>
+      <p>Crafted for more user engagement and conversions.</p>
     </div>
     <div class="card">
       <div class="card-img">
         <div class="img-note">📌 Зображення: іконка / ілюстрація</div>
       </div>
-      <h4>Effortless analytics</h4>
-      <p>Designed to watch, growing docs and insights.</p>
+      <h4>Effortlessly maintained</h4>
+      <p>Designed to make updating documentation easy.</p>
     </div>
   </div>
 </section>
@@ -152,50 +157,50 @@
 <!-- ============ AI CHAT ============ -->
 <section class="section section-ai">
   <div class="container">
-    <span class="pill">Documentation leveled up</span>
+    <span class="pill">✦ Features</span>
     <h2 class="section-title">Documentation leveled up</h2>
-    <p class="section-sub">Built for the modern developer to engage users</p>
+    <p class="section-sub">Built for the modern business to engage users</p>
 
     <div class="chat">
-      <div class="chat-head">Ask Brand</div>
+      <div class="chat-head">‹ Ask Mintlify</div>
       <div class="chat-body">
-        <p class="chat-q">What is Brand?</p>
-        <p class="chat-a">Brand is a service that makes it easy to create and maintain documentation for your product. It helps teams publish beautiful docs fast.</p>
-        <p class="chat-a">Lorem ipsum is a placeholder used for layout while the real content is written.</p>
+        <p class="chat-q">✎ What is Mintlify?</p>
+        <p class="chat-a">✦ Mintlify is a service that makes it easy to create and maintain docs for your product. It is designed for developers and keeps content close to your codebase.</p>
+        <p class="chat-a">Built-in components help make your documentation appealing without the need for additional formatting.</p>
       </div>
-      <div class="chat-input">Ask a follow-up question…<span aria-hidden="true">↑</span></div>
+      <div class="chat-input">Ask a follow-up question…<span aria-hidden="true">➤</span></div>
     </div>
 
     <div class="ai-cta">
       <h3>AI Chat</h3>
-      <p>GPT-4 powered chat bot for users to get direct answers to their questions.</p>
-      <a href="#" class="btn btn-outline">Get Started</a>
+      <p>GPT-4 powered chat box for users to get direct answers to their questions.</p>
+      <a href="#" class="btn btn-small btn-dark">Get Started ›</a>
     </div>
 
     <div class="features">
-      <div class="feature"><span class="feature-icon">☰</span><h4>Editing</h4><p>Edit workflow tools that let you work.</p></div>
-      <div class="feature"><span class="feature-icon">▦</span><h4>API Playground</h4><p>Test endpoints directly inside your docs.</p></div>
-      <div class="feature"><span class="feature-icon">⇄</span><h4>Documentation Analytics</h4><p>Understand which pages are reading and where they get stuck.</p></div>
-      <div class="feature"><span class="feature-icon">⌕</span><h4>Search</h4><p>Content is indexed on every update for lightning-fast search.</p></div>
-      <div class="feature"><span class="feature-icon">✎</span><h4>Locale Generator</h4><p>Generate translations for your docs automatically.</p></div>
-      <div class="feature"><span class="feature-icon">⧉</span><h4>Preview Deployments</h4><p>Review and share your changes before they go live.</p></div>
+      <div class="feature"><span class="feature-icon">▤</span><h4>Editing</h4><p>Editing workflow built into where you work.</p></div>
+      <div class="feature"><span class="feature-icon">▣</span><h4>API Playground</h4><p>Interactive experience built around your APIs.</p></div>
+      <div class="feature"><span class="feature-icon">⇄</span><h4>Documentation Analytics</h4><p>Understand which pages are viewed and where they are converting.</p></div>
+      <div class="feature"><span class="feature-icon">⌕</span><h4>Search</h4><p>Content is indexed on every update for lightning-fast full-text search.</p></div>
+      <div class="feature"><span class="feature-icon">✎</span><h4>Leads Generator</h4><p>Identify sales prospects viewing your documentation.</p></div>
+      <div class="feature"><span class="feature-icon">▤</span><h4>Preview Deployments</h4><p>Review and share your changes before they go live.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
 <section class="section container">
-  <span class="pill">♥ Loved by</span>
+  <span class="pill">♥ Wall of love</span>
   <h2 class="section-title">Built to impress</h2>
-  <p class="section-sub">Why leading companies build with Brand</p>
+  <p class="section-sub">Why leading companies build with Mintlify</p>
 
   <div class="testimonials">
-    <blockquote class="quote"><p>The docs experience is excellent. Setup took minutes and the team loves it.</p><footer><span class="avatar"></span><div><strong>Guillermo Rauch</strong><small>CEO, Vercel</small></div></footer></blockquote>
-    <blockquote class="quote"><p>We replaced our old wiki and our support tickets dropped noticeably within a month.</p><footer><span class="avatar"></span><div><strong>Dev Patel</strong><small>CTO, Acme Labs</small></div></footer></blockquote>
-    <blockquote class="quote"><p>Clean, fast and easy to customize. Our developers actually read the docs now.</p><footer><span class="avatar"></span><div><strong>Chris Ang</strong><small>Head of Product, Stripe</small></div></footer></blockquote>
-    <blockquote class="quote"><p>Beautiful defaults that look premium without any design work on our side.</p><footer><span class="avatar"></span><div><strong>Yassine Zoro</strong><small>Founder, Cortex</small></div></footer></blockquote>
-    <blockquote class="quote"><p>Search and analytics alone are worth it. We see exactly what users look for.</p><footer><span class="avatar"></span><div><strong>Maya Chen</strong><small>Engineering Lead, Nova</small></div></footer></blockquote>
-    <blockquote class="quote"><p>Preview deployments made our review process smooth for the whole team.</p><footer><span class="avatar"></span><div><strong>Omar Haddad</strong><small>DevRel, Orbit</small></div></footer></blockquote>
+    <blockquote class="quote"><p>Setup took minutes, and the result looks polished without any design work on our side.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
+    <blockquote class="quote"><p>We moved our docs over in an afternoon. Our support questions dropped within a month.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
+    <blockquote class="quote"><p>Our engineers now update the docs in the same pull requests as the code. That alone was worth it.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
+    <blockquote class="quote"><p>Clean defaults, fast pages, and a team that actually reads what we publish.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
+    <blockquote class="quote"><p>Search and analytics show us exactly which pages users look for. We act on that every week.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
+    <blockquote class="quote"><p>Preview deployments made reviewing documentation changes smooth for the whole team.</p><footer><span class="avatar"></span><div><strong>Customer name</strong><small>Role, Company</small></div></footer></blockquote>
   </div>
   <div class="center"><a href="#" class="btn btn-outline">Show more</a></div>
 </section>
@@ -212,21 +217,27 @@
 
     <div class="window window-wide">
       <div class="window-bar">
-        <div class="window-search">Search</div>
-        <div class="window-actions"><span>Log in</span><span class="btn btn-small btn-green">Get started</span></div>
+        <div class="brand-mini"><span class="logo-mark" aria-hidden="true"></span>Mintlify</div>
+        <div class="window-search">Search… <span class="kbd">⌘K</span></div>
+        <div class="window-actions"><span>Login</span><span class="btn btn-small btn-green">Get started ›</span></div>
+      </div>
+      <div class="window-tabs">
+        <span class="is-active">Documentation</span><span>Integrations</span><span>Examples</span><span>APIs</span>
       </div>
       <div class="window-body">
         <aside class="window-side">
-          <div class="side-group">Get started</div>
+          <div class="side-link">Join our Slack</div>
+          <div class="side-link">GitHub</div>
+          <div class="side-group">Overview</div>
           <div class="side-item is-active">Introduction</div>
           <div class="side-item">Quickstart</div>
           <div class="side-group">Use cases</div>
-          <div class="side-item">Chatbots</div>
+          <div class="side-item">Chatbots ›</div>
         </aside>
         <article class="window-main">
-          <h3>Introduction to Brand</h3>
-          <p class="window-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integrate with your stack in minutes.</p>
-          <!-- TODO: скріншот «Introduction to Brand» з великим прев'ю -->
+          <h3>Introduction to Mintlify</h3>
+          <p class="window-text">Integrate your data sources, models and frameworks in minutes and publish beautiful documentation for every release.</p>
+          <!-- 📌 Зображення: велике прев'ю сторінки Introduction -->
           <div class="img-note">📌 Зображення: скріншот сторінки Introduction (велике прев'ю)</div>
         </article>
       </div>
@@ -238,7 +249,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="#" class="logo"><span class="logo-mark" aria-hidden="true"></span><span>Brand</span></a>
+      <a href="#" class="logo"><span class="logo-mark" aria-hidden="true"></span><span>Mintlify</span></a>
     </div>
     <div>
       <h5>Product</h5>
@@ -253,7 +264,8 @@
     <div class="socials" aria-label="Social links">
       <a href="#" aria-label="X">𝕏</a><a href="#" aria-label="GitHub">◎</a><a href="#" aria-label="LinkedIn">in</a>
     </div>
-    <p>© 2025 Brand, Inc.</p>
+    <p>● All systems normal</p>
+    <p>© 2025 Mintlify, Inc.</p>
   </div>
 </footer>
 
