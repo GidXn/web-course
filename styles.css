@@ -264,10 +264,8 @@ svg { flex: none; }
   color: #0f4f57;
   white-space: nowrap;
   opacity: .7;
-  transition: opacity .2s ease;
 }
 .tab img { position: relative; width: 20px; height: 20px; }
-.tab:hover { opacity: 1; }
 .tab.is-active { opacity: 1; }
 .tab.is-active::before {      /* біла «пігулка» 124×36 */
   content: "";
@@ -599,7 +597,7 @@ svg { flex: none; }
 .quote {
   break-inside: avoid;
   margin-bottom: 12px;
-  padding: 24px 28px 25px;
+  padding: 24px 28px 24.25px;
   border: 1px solid #f3f4f6;
   border-radius: var(--radius-lg);
   background: #fff;
@@ -611,7 +609,7 @@ svg { flex: none; }
 .quote figcaption { align-items: flex-start; }
 .quote figcaption > span { padding-top: 1px; }
 .quote blockquote {
-  margin: 15px 0 0;
+  margin: 15.75px 0 0;
   font-size: 14px;
   line-height: 22.75px;
   color: #4b5563;
@@ -630,12 +628,12 @@ svg { flex: none; }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 300px;
+  height: 240px;            /* Figma: від 540px стіни до низу */
   display: flex;
   align-items: flex-end;
   justify-content: center;
   padding-bottom: 7.75px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .85) 55%, #fff 80%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 69%);
 }
 .show-more {
   padding: 7px 15px;
