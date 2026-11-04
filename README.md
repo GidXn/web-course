@@ -20,4 +20,4 @@ python -m http.server 8000
 ## Примітки до верстки
 
 - Верстка звірена з макетом у Figma ([web-course — template](https://www.figma.com/design/fZwQUaErVV7HcRrNXCiPcj/web-course---template?node-id=20-2)) на ширині 1440px: розміри, відступи, радіуси й кегль узяті з вузлів макета.
-- Зображення з Figma лежать у `imgs/figma/` (ілюстрації карток, вікно AI-чату, скріншоти PearsDB і MindsDB) та `imgs/avatars/` (фото авторів відгуків).
+- Зображення з Figma лежать у `imgs/` (ілюстрації карток, вікно AI-чату, скріншоти PearsDB і MindsDB), а також фото авторів відгуків.
