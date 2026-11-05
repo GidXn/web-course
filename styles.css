@@ -1,11 +1,11 @@
 /* =========================================================
-   Mintlify landing — верстка з макета 1440px
-   Сітка макета: лінії-напрямні на x = 144 / 208 / 1232 / 1296
+   Mintlify landing — layout built from the 1440px mockup
+   Mockup grid: guide lines at x = 144 / 208 / 1232 / 1296
    ========================================================= */
 
 /* ============ TOKENS ============ */
 :root {
-  /* hero (бірюзова гама) */
+  /* hero (teal palette) */
   --teal-900: #0c4d54;
   --teal-800: #1f4b49;
   --teal-700: #2a6064;
@@ -13,7 +13,7 @@
   --teal-ring: #c3ddd9;
   --mint-rule: rgba(40, 97, 103, .07);
 
-  /* нейтральна гама (нижні секції) */
+  /* neutral palette (lower sections) */
   --ink: #1f2937;
   --ink-2: #374151;
   --muted: #6b7280;
@@ -34,11 +34,11 @@
 }
 
 /* ============ FONTS ============ */
-/* Inter 3.19 — та сама версія, якою рендерить Figma (Inter 4 з Google Fonts має інші гліфи) */
+/* Inter 3.19 — the version Figma renders with (Inter 4 from Google Fonts has different glyphs) */
 @font-face { font-family: "Inter"; src: url("fonts/inter3-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Inter"; src: url("fonts/inter3-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-/* змінний Inter 3.19 — лише для білого тексту на темних кнопках: Chrome малює світлий текст
-   на темному тлі «жирніше», ніж Figma, тому там накреслення 270 (ширина як у 400) */
+/* variable Inter 3.19 — only for white text on dark buttons: Chrome renders light text
+   on a dark background heavier than Figma, so those labels use weight 270 (same width as 400) */
 @font-face { font-family: "Inter Var"; src: url("fonts/inter3-var.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 
 /* ============ BASE ============ */
@@ -76,7 +76,7 @@ svg { flex: none; }
 }
 .skip-link:focus { top: 16px; }
 
-/* stroke-іконки */
+/* stroke icons */
 .chev {
   fill: none;
   stroke: currentColor;
@@ -87,7 +87,7 @@ svg { flex: none; }
 .fill { fill: currentColor; stroke: none; }
 .chev { width: 14px; height: 14px; stroke-width: 2; }
 
-/* ============ GUIDES (декоративні лінії сітки) ============ */
+/* ============ GUIDES (decorative grid lines) ============ */
 .guides {
   position: absolute;
   top: 0;
@@ -211,7 +211,7 @@ svg { flex: none; }
 
 .hero-title {
   position: relative;
-  margin-top: 64.1px;          /* перший рядок: 159.1px */
+  margin-top: 64.1px;          /* first line: 159.1px */
   font-size: 59.297px;
   line-height: 64.8px;
   font-weight: 400;
@@ -226,7 +226,7 @@ svg { flex: none; }
   color: #0f4f57;
 }
 .cta-row--hero { margin-top: 36px; }
-.cta-row--hero .btn--teal { margin-left: 4px; }   /* центр рахується по зовнішньому кільцю */   /* кнопка 405.59px */
+.cta-row--hero .btn--teal { margin-left: 4px; }   /* the row is centred on the outer ring */   /* button at 405.59px */
 
 /* tabs */
 .tabs {
@@ -235,7 +235,7 @@ svg { flex: none; }
   align-items: center;
   gap: 4px;
   margin: 68px auto 0;         /* 513.59px */
-  padding: 5px 13px;            /* 1px «рамки» тінню + 4/12 */
+  padding: 5px 13px;            /* 1px "border" drawn as a shadow + 4/12 */
   border-radius: var(--pill);
   background: rgba(40, 97, 103, .07);
   box-shadow: inset 0 0 0 1px rgba(40, 97, 103, .05);
@@ -252,12 +252,12 @@ svg { flex: none; }
   padding: 0 16px;
   font-size: 16px;
   line-height: 24px;
-  color: rgba(15, 79, 87, .7);   /* Figma: текст неактивного табу 70 %, іконка 100 % */
+  color: rgba(15, 79, 87, .7);   /* Figma: inactive tab label at 70%, icon at 100% */
   white-space: nowrap;
 }
 .tab img { position: relative; width: 20px; height: 20px; }
 .tab.is-active { color: #0f4f57; }
-.tab.is-active::before {      /* біла «пігулка» 124×36 */
+.tab.is-active::before {      /* white 124×36 pill */
   content: "";
   position: absolute;
   top: 0;
@@ -265,13 +265,13 @@ svg { flex: none; }
   left: -8px;
   width: 124px;
   box-shadow: inset 0 0 0 1px #cce3e4;
-  border-radius: 18px 16px 16px 18px;   /* Figma 32/16: ліві кути обрізаються до 18 (½ висоти), праві 16 */
+  border-radius: 18px 16px 16px 18px;   /* Figma 32/16: left corners clamp to 18 (half the height), right corners stay 16 */
   background: #fff;
 }
 .tab.is-active { isolation: isolate; }
 .tab.is-active::before { z-index: -1; }
 
-/* превʼю продукту */
+/* product preview */
 .preview-band {
   position: relative;
   margin-top: 24px;            /* 583.59px */
@@ -305,11 +305,11 @@ svg { flex: none; }
   background: #fff;
 }
 
-/* логотипи */
+/* logos */
 .logos {
   position: relative;
   max-width: var(--w-content);
-  margin: 96px auto 0;         /* заголовок 1409.14px */
+  margin: 96px auto 0;         /* heading at 1409.14px */
   text-align: center;
 }
 .logos-title {
@@ -342,7 +342,7 @@ svg { flex: none; }
 }
 
 /* ============ SECTION HEADINGS ============ */
-.eyebrow {                   /* блочний flex: висота не залежить від метрик шрифту/DPR */
+.eyebrow {                   /* block-level flex: height does not depend on font metrics or DPR */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -373,7 +373,7 @@ svg { flex: none; }
   padding: 127.8px var(--gutter) 0;
   text-align: center;
 }
-.standard .section-title { margin-top: 23.19px; line-height: 56px; }   /* рамка Figma 1860.91, 2×56 по центру → −0.81 */
+.standard .section-title { margin-top: 23.19px; line-height: 56px; }   /* Figma frame at 1860.91, 2×56 lines centred → −0.81 */
 .standard .section-sub { margin-top: 13.18px; }
 .bento {
   display: grid;
@@ -394,11 +394,11 @@ svg { flex: none; }
   background: #f7f8f9;
   overflow: hidden;
 }
-.bento-card::after {        /* затемнення ілюстрації до кольору картки */
+.bento-card::after {        /* fades the illustration into the card colour */
   content: "";
   position: absolute;
   inset: 50% 0 0;
-  /* Figma інтерполює колір без премультиплікації: білий → #f7f7f8 разом з альфою */
+  /* Figma interpolates without premultiplied alpha: white → #f7f7f8 together with alpha */
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(253, 253, 253.25, .25) 10%, rgba(251, 251, 251.5, .5) 20%, rgba(249, 249, 249.75, .75) 30%, #f7f7f8 40%);
   pointer-events: none;
 }
@@ -439,11 +439,11 @@ svg { flex: none; }
   position: relative;
   margin: 0 auto;
   border-radius: var(--radius-xl);
-  background: #f7f8f9;          /* = rgba(243,244,246,.7) на білому, як рендерить Figma */
+  background: #f7f8f9;          /* = rgba(243,244,246,.7) on white, as Figma renders it */
   overflow: hidden;
   text-align: center;
 }
-.panel::before {           /* горизонтальна напрямна */
+.panel::before {           /* horizontal guide line */
   content: "";
   position: absolute;
   left: 0;
@@ -509,7 +509,7 @@ svg { flex: none; }
   color: #4b5563;
 }
 
-.feature-grid {               /* 1152 × 385, клітинки 382.67 × 192, лінії 1px */
+.feature-grid {               /* 1152 × 385, cells 382.67 × 192, 1px lines */
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -524,7 +524,7 @@ svg { flex: none; }
   text-align: left;
 }
 .feature-grid::before,
-.feature-grid::after {      /* горизонтальні лінії на всю ширину панелі */
+.feature-grid::after {      /* horizontal lines across the full panel width */
   content: "";
   position: absolute;
   left: -200vw;
@@ -583,10 +583,10 @@ svg { flex: none; }
 .quote {
   break-inside: avoid;
   margin-bottom: 12px;
-  padding: 25px 29px 25.25px;   /* 1px «рамки» тінню + 24/28 */
+  padding: 25px 29px 25.25px;   /* 1px "border" drawn as a shadow + 24/28 */
   border-radius: var(--radius-lg);
   background: #fff;
-  box-shadow: inset 0 0 0 1px #eff1f3;   /* Figma: рамка #eff1f3, без тіні */
+  box-shadow: inset 0 0 0 1px #eff1f3;   /* Figma: #eff1f3 border, no drop shadow */
 }
 .quote figcaption { display: flex; align-items: center; gap: 12px; }
 .quote b { display: block; font-size: 14px; line-height: 20px; font-weight: 400; color: #1f2937; }
@@ -613,7 +613,7 @@ svg { flex: none; }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 240px;            /* Figma: від 540px стіни до низу */
+  height: 240px;            /* Figma: from 540px down to the bottom of the wall */
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -636,7 +636,7 @@ svg { flex: none; }
   padding-top: 136px;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
-.final::after {             /* нижня лінія + затухання до білого */
+.final::after {             /* bottom line + fade to white */
   content: "";
   position: absolute;
   left: 0;
@@ -660,9 +660,9 @@ svg { flex: none; }
   max-width: 100%;
   margin: 52px auto 0;
   padding: 8px;
-  background: rgba(17, 24, 39, .05);   /* напівпрозора рамка: знизу крізь неї видно затухання панелі */
+  background: rgba(17, 24, 39, .05);   /* translucent frame: the panel fade shows through it at the bottom */
 }
-.showcase::before {           /* лінія на всю ширину панелі на рівні верху скріншота */
+.showcase::before {           /* full-width panel line level with the top of the screenshot */
   content: "";
   position: absolute;
   left: -64px;
@@ -684,7 +684,7 @@ svg { flex: none; }
   content: "";
   position: absolute;
   inset: 316.58px 0 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .88) 48.5%, #fff 80%);   /* крива виміряна з макета */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .88) 48.5%, #fff 80%);   /* curve measured from the mockup */
 }
 .powered {
   position: absolute;
@@ -711,7 +711,7 @@ svg { flex: none; }
   color: #1f2937;
 }
 .pw img { width: 20px; height: 20px; border-radius: 50%; }
-.pw.is-active { background: #fff; box-shadow: 0 0 0 1px #eef0f4, 0 1px 2px rgba(16, 24, 40, .05); }   /* зовнішній штрих Figma */
+.pw.is-active { background: #fff; box-shadow: 0 0 0 1px #eef0f4, 0 1px 2px rgba(16, 24, 40, .05); }   /* Figma outside stroke */
 
 /* ============ FOOTER (Figma: 272 → 1168) ============ */
 .footer {
@@ -745,8 +745,8 @@ svg { flex: none; }
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   position: relative;
-  margin-top: 64px;            /* лінія на 196px */
-  padding-top: 65px;           /* Figma рахує 64px від внутрішнього краю 1px-лінії */
+  margin-top: 64px;            /* line at 196px */
+  padding-top: 65px;           /* Figma measures 64px from the inner edge of the 1px line */
 }
 .footer-bottom::before {
   content: "";
@@ -797,8 +797,8 @@ svg { flex: none; }
 .theme img { width: 16px; height: 16px; }
 
 /* ============ GLYPH OFFSETS ============
-   Figma ставить гліфи в рядку трохи інакше, ніж Chrome (виміряно по рендеру макета
-   на DPR 1.5 / 2). Зсув лише малює текст, геометрія блоків не змінюється. */
+   Figma places glyphs within a line slightly differently from Chrome (measured against
+   the mockup render at DPR 1.5 / 2). These offsets only move the text; box geometry stays the same. */
 .nav-links a, .nav-signin, .hero-sub, .btn .t, .btn-link .t, .tab .t, .logos-title,
 .eyebrow, .section-title, .section-sub, .bento-card h3, .bento-card p, .ai-copy h3, .ai-copy p,
 .feature-grid h3, .feature-grid p, .quote small, .show-more, .footer-col h2, .footer-col a,
