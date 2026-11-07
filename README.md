@@ -5,7 +5,7 @@ Repository of laboratory works for the course "Web Programming".
 **Author:** Gydin Mykhailo, group KII-61(b)  
 **Project topic:** a landing page for the Mintlify documentation platform  
 **Published site:** https://gidxn.github.io/web-course/  
-**Design mockup:** [web-course — template](https://www.figma.com/design/fZwQUaErVV7HcRrNXCiPcj/web-course---template?node-id=20-2) (Figma)
+**Design mockup:** [web-course — 12](https://www.figma.com/design/3qImjM40lkNin8OjLMUVgl/20--Free-Fully-Editable-Websites--Community-?node-id=20-3&t=No2ksJyaQc8breON-0) (Figma)
 
 ## List of laboratory works
 
