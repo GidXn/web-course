@@ -324,6 +324,9 @@ button {
     max-width: 1016px;
     margin: 44px auto 0;
 }
+.logos-grid img {
+    height: auto;
+}
 .logos-grid li {
     display: flex;
     align-items: center;
@@ -897,7 +900,6 @@ button {
     }
     .logos-grid img {
         max-width: 80%;
-        height: auto;
     }
     .bento {
         grid-template-columns: repeat(2, 1fr);
