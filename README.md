@@ -1,18 +1,35 @@
-# web-course
+# Web Programming — Course Project
 
-Навчальний проєкт: лендінг-сторінка для документаційної платформи, зверстана з макета у HTML і CSS.
+Repository of laboratory works for the course "Web Programming".
 
-## Структура
+**Author:** Gydin Mykhailo, group KII-61(b)  
+**Project topic:** a landing page for the Mintlify documentation platform  
+**Published site:** https://gidxn.github.io/web-course/  
+**Design mockup:** [web-course — template](https://www.figma.com/design/fZwQUaErVV7HcRrNXCiPcj/web-course---template?node-id=20-2) (Figma)
 
-- `index.html` — розмітка сторінки: шапка з hero, логотипи, картки, блок із AI-чатом, відгуки, фінальний заклик і футер.
-- `styles.css` — стилі: кольорові змінні, адаптивна верстка (flexbox і grid), media queries.
+## List of laboratory works
 
-## Примітки до верстки
+| № | Laboratory work title | Status |
+|---|---|---|
+| 1 | Organizing the web development environment. Creating and publishing a web document | ✅ Done |
+| 2 | Studying client-server interaction with developer tools | ✅ Done |
+| 3 | Markup of the structure of a hypertext document | ✅ Done |
+| 4 | Semantic Reorganization and Validation of a Web Page | ✅ Done |
 
-- Верстка звірена з макетом у Figma ([web-course — template](https://www.figma.com/design/fZwQUaErVV7HcRrNXCiPcj/web-course---template?node-id=20-2)) на ширині 1440px: розміри, відступи, радіуси й кегль узяті з вузлів макета.
-- Зображення з Figma лежать у `imgs/` (ілюстрації карток, вікно AI-чату, скріншоти PearsDB і MindsDB), а також фото авторів відгуків.
-- Pixel-perfect перевірка: експорт фрейму Figma 1440×7045 порівнюється з рендером сторінки на DPR 1, 1.5 і 2 (по центру мас «чорнила» кожного рядка тексту й кожної іконки). Середній зсув тексту ≈0.3px, різниця по сторінці ≈0.6–0.9 рівня яскравості; решта — згладжування шрифту браузером.
-- Верстка не залежить від масштабу екрана: рамки зроблено тінями (`box-shadow: inset`), а бейджі/таби — блочними flex-елементами, бо Chrome на 125–175 % округлює 1px-рамки та рядки з inline-блоками і сторінка «з'їжджала» на 1–3px.
-- Figma ставить гліфи в рядку трохи інакше, ніж Chrome, тому для тексту є дрібні поправки `top` у `styles.css` (геометрія блоків при цьому точно як у макеті).
-- Шрифт — Inter 3.19, вбудований у `styles.css` як base64 (саме ним рендерить Figma); Inter 4 з Google Fonts має інші гліфи й ширини. Білий текст на темних кнопках — змінний Inter 3.19 з накресленням 270 (Chrome малює світлий текст на темному «жирніше», ніж Figma).
-- Іконки, логотипи (у т. ч. смуга клієнтів), логотип Mintlify і кольорове коло AI Chat — SVG з макета (`imgs/*.svg`). Фото, ілюстрації карток, вікно чату й скріншоти — растрові, як і в Figma. П'ять міні-логотипів «Powered by Mintlify» (`imgs/pw-*.png`) вирізані з рендеру макета: SVG для них не вдалося отримати через ліміт Figma API.
+## Technologies used
+
+- **HTML5** — semantic page markup (header, nav, main, section, article, figure, footer)
+- **CSS3** — styling in a separate `styles.css` file, layout with Flexbox and Grid, Inter font embedded in the stylesheet
+- **Git / GitHub** — version control, repository storage
+- **GitHub Pages** — publishing and hosting of the finished site
+- **WebStorm / Visual Studio Code** — development environment
+
+## Project directory structure
+
+```
+web-course/
+├── README.md
+├── index.html
+├── styles.css
+└── imgs/
+```
