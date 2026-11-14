@@ -13,7 +13,7 @@
 }
 html {
     -webkit-text-size-adjust: 100%;
-    /* No scrollbar, as in the mockup: 100vw is then exactly the page width */
+    /* No scrollbar, as in the mockup: the page width stays even and the layout centres on whole pixels */
     scrollbar-width: none;
 }
 body {
@@ -22,9 +22,6 @@ body {
     font: 16px/1.5 "Inter Figma", sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    /* Scale the 1440px layout up to 1920px.
-       tan(atan2(a, b)) is the number a / b, which calc() cannot get from two lengths everywhere */
-    zoom: tan(atan2(clamp(1440px, 100vw, 1920px), 1440px));
 }
 img {
     max-width: 100%;
@@ -137,13 +134,13 @@ button {
     letter-spacing: .114px;
 }
 .btn--teal .t, .btn-link .t {
-    top: .89px;
+    top: .58px;
 }
 .btn--ink .t {
-    top: .61px;
+    top: .14px;
 }
 .btn--ghost .t {
-    top: .6px;
+    top: -.04px;
 }
 .cta-row {
     display: flex;
@@ -193,7 +190,7 @@ button {
 }
 .nav-links a, .nav-signin {
     position: relative;
-    top: .74px;
+    top: .07px;
 }
 .hero-content {
     text-align: center;
@@ -215,14 +212,14 @@ button {
 }
 .hero-title {
     position: relative;
-    top: -.46px;
+    top: -.2px;
     margin-top: 64.1px;
     font-size: 59.297px;
     line-height: 64.8px;
 }
 .hero-sub {
     position: relative;
-    top: .08px;
+    top: .57px;
     max-width: 576px;
     margin: 15.89px auto 0;
     line-height: 32px;
@@ -254,7 +251,7 @@ button {
     white-space: nowrap;
 }
 .tab .t {
-    top: .64px;
+    top: .44px;
 }
 .tab.is-active {
     color: var(--teal);
@@ -311,7 +308,7 @@ button {
 }
 .logos-title {
     position: relative;
-    top: .55px;
+    top: .15px;
     padding: 0 16px;
     color: rgba(15, 79, 87, .7);
 }
@@ -343,7 +340,7 @@ button {
 /* Section headings */
 .eyebrow {
     position: relative;
-    top: .29px;
+    top: -.2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -357,21 +354,21 @@ button {
     height: 16px;
 }
 .standard .eyebrow {
-    top: .72px;
+    top: .1px;
 }
 .love .eyebrow {
-    top: .55px;
+    top: .5px;
 }
 .section-title {
     position: relative;
-    top: -.68px;
+    top: -.4px;
     margin-top: 23.4px;
     font-size: 48px;
     line-height: 55.2px;
 }
 .section-sub {
     position: relative;
-    top: .8px;
+    top: .08px;
     margin-top: 14.59px;
     color: #4b5563;
 }
@@ -379,14 +376,14 @@ button {
     line-height: 56px;
 }
 .standard .section-title {
-    top: -.4px;
+    top: -.2px;
     margin-top: 23.19px;
 }
 .love .section-title {
-    top: -.68px;
+    top: .02px;
 }
 .final .section-title {
-    top: .08px;
+    top: -.28px;
     margin-top: -.81px;
 }
 .standard .section-sub, .final .section-sub {
@@ -447,11 +444,13 @@ button {
     z-index: 1;
 }
 .bento-card h3 {
+    top: -.2px;
     font-size: 14px;
     line-height: 20px;
     color: #000;
 }
 .bento-card p {
+    top: -.2px;
     max-width: 440px;
     margin: 10px auto 0;
     font-size: 12px;
@@ -459,10 +458,9 @@ button {
     color: var(--muted);
 }
 .bento-card:not(.bento-card--wide) h3 {
-    top: .3px;
 }
 .bento-card:not(.bento-card--wide) p {
-    top: .81px;
+    top: -.2px;
     max-width: 250px;
     margin-top: 9.75px;
     line-height: 19.5px;
@@ -506,7 +504,8 @@ button {
 
 /* Features */
 .features {
-    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    width: 1408px;
     margin-top: 128px;
     padding-top: 112px;
 }
@@ -542,14 +541,14 @@ button {
 }
 .ai-copy h3 {
     position: relative;
-    top: .89px;
+    top: .45px;
     font-size: 36px;
     line-height: 40px;
     color: #000;
 }
 .ai-copy p {
     position: relative;
-    top: .71px;
+    top: .57px;
     margin: 20px 0 28px;
     color: #4b5563;
 }
@@ -583,12 +582,12 @@ button {
 }
 .feature-grid h3 {
     position: relative;
-    top: .82px;
+    top: .5px;
     margin-top: 12px;
 }
 .feature-grid p {
     position: relative;
-    top: .36px;
+    top: .52px;
     margin-top: 8px;
     line-height: 26px;
     color: var(--muted);
@@ -632,21 +631,19 @@ button {
     padding-top: 1px;
 }
 .quote b {
-    position: relative;
-    top: .44px;
     display: block;
     line-height: 20px;
 }
 .quote small {
     position: relative;
-    top: 1.36px;
+    top: .09px;
     display: block;
     font-size: 14px;
     color: var(--muted);
 }
 .quote blockquote {
     position: relative;
-    top: -.26px;
+    top: .2px;
     margin-top: 15.75px;
     line-height: 22.75px;
     color: #4b5563;
@@ -669,7 +666,7 @@ button {
 }
 .show-more {
     position: relative;
-    top: .89px;
+    top: .3px;
     padding: 7px 15px;
     font-size: 14px;
     line-height: 17px;
@@ -745,7 +742,7 @@ button {
 }
 .powered-label, .pw .t {
     position: relative;
-    top: .56px;
+    top: .2px;
 }
 .pw {
     display: flex;
@@ -800,7 +797,7 @@ button {
     font-size: 14px;
 }
 .footer-col h2 {
-    top: 1.13px;
+    top: 1.01px;
     padding-top: .5px;
     line-height: 20px;
 }
@@ -810,7 +807,7 @@ button {
     margin-top: 20.5px;
 }
 .footer-col a {
-    top: 1.22px;
+    top: .6px;
     display: block;
     line-height: 21px;
     color: var(--muted);
@@ -843,7 +840,7 @@ button {
     line-height: 16px;
 }
 .status .t {
-    top: .58px;
+    top: -.2px;
 }
 .status-dot {
     position: relative;
@@ -861,7 +858,7 @@ button {
 }
 .copy {
     position: relative;
-    top: 1.05px;
+    top: .6px;
     text-align: center;
     font-size: 14px;
     color: var(--muted);
