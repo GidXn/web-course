@@ -21,6 +21,8 @@ body {
     color: var(--ink);
     font: 16px/1.5 "Inter Figma", sans-serif;
     -webkit-font-smoothing: antialiased;
+    /* Own layer: Chrome then smooths text in greyscale, as Figma does, instead of coloured ClearType */
+    will-change: transform;
     overflow-x: hidden;
 }
 img {
