@@ -13,6 +13,8 @@
 }
 html {
     -webkit-text-size-adjust: 100%;
+    /* A real page colour: without it blend modes (the Difference overlay) have nothing to compare white areas with */
+    background: #fff;
     /* No scrollbar, as in the mockup: the page width stays even and the layout centres on whole pixels */
     scrollbar-width: none;
 }
@@ -21,10 +23,16 @@ body {
     color: var(--ink);
     font: 16px/1.5 "Inter Figma", sans-serif;
     -webkit-font-smoothing: antialiased;
-    /* Own layer: Chrome then smooths text in greyscale, as Figma does, instead of coloured ClearType.
-       opacity (not transform) keeps fixed elements added by browser extensions tied to the window */
-    will-change: opacity;
     overflow-x: hidden;
+}
+/* Own layers: Chrome then smooths text in greyscale, as Figma does, instead of coloured ClearType.
+   The layers must start on whole pixels, so the header and main heights are rounded up
+   and the same fraction is taken off the padding of the block that follows */
+.hero, main, .footer {
+    will-change: transform;
+}
+main {
+    padding-bottom: .532px;
 }
 img {
     max-width: 100%;
@@ -163,7 +171,7 @@ button {
 /* Hero */
 .hero {
     position: relative;
-    padding-bottom: 76px;
+    padding-bottom: 75.891px;
     overflow: hidden;
     background: linear-gradient(49.55deg, #e7f5fd 0%, #e6f9f6 50%, #e3fcef 100%);
     color: var(--teal);
@@ -399,7 +407,7 @@ button {
     text-align: center;
 }
 .standard {
-    padding-top: 127.8px;
+    padding-top: 127.907px;
 }
 .bento {
     display: grid;
@@ -768,7 +776,7 @@ button {
 .footer {
     max-width: 832px;
     margin: 0 auto;
-    padding: 144px 16px 0;
+    padding: 143.469px 16px 0;
     box-sizing: content-box;
 }
 .footer-top {
